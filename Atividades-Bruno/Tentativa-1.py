@@ -25,3 +25,4 @@ model.fit(x_train, y_train, epochs=5, batch_size=32, verbose=1)
 # Avaliar o modelo
 loss, accuracy = model.evaluate(x_test, y_test, verbose=0)
 print('Acurácia no conjunto de teste:', accuracy)
+
