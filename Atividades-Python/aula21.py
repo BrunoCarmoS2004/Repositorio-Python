@@ -32,7 +32,7 @@ class Guarda(NPC):
         super().__init__(nome, time, self.forca, self.municao)
         
 class Elite(NPC):
-    def __init__(self, nome, time):
+    def __init__ (self, nome, time):
         self.forca=400
         self.municao=500
         super().__init__(nome, time, self.forca, self.municao)
