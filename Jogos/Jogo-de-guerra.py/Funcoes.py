@@ -1,5 +1,5 @@
 import os
-from random import random, randrange
+import random
 import time
 
 
@@ -51,6 +51,15 @@ class Fortinho(NPC):
         self.energia=50
         self.dano=10
         super().__init__(self.nome, self.vida, self.municao, self.energia, self.dano)
+    
+class Lojinha(NPC):
+    def __init__(self):
+        self.nome="Lojinha"
+        self.vida=100 
+        self.municao=55
+        self.energia=100
+        self.dano=5
+        super().__init__(self.nome, self.vida, self.municao, self.energia, self.dano)
         
 class Jogador(NPC):
    def __init__(self, nome, vida, energia):
@@ -64,6 +73,7 @@ class Jogador(NPC):
 Norm=Normalzinho()
 Rapi=Rapidinho()
 Fort=Fortinho()
+loji=Lojinha()
 
 def tabela():
    print("O que quer fazer agora?")
@@ -76,7 +86,18 @@ def tabela():
    
 def Jogo_principal():
     rand=random.randrange(1,100)
-    print(rand)
+    if (rand >=1 and rand <= 33):
+        print("Normalzinho")
+        
+    elif (rand > 33 and rand <= 66):
+        print("Rapidinho")
+        
+    elif (rand > 66 and rand <= 90):
+        print("Fortinho")
+        
+    elif (rand > 90 and rand <=100):
+        print("Lojinha")
+    
 
    
 
