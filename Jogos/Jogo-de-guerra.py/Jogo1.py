@@ -1,9 +1,10 @@
 import os
 import time
 from Funcoes import *
+import random
 resultado = 1
 
-
+Jogo_principal()
 print("Bem vindo ao Campo de batalha...")
 print()
 
@@ -87,7 +88,16 @@ print()
 print("Bora dar o proximo passo!") 
 print()
 os.system('pause')
-
+os.system('cls')
+tabela()
+tab_esco = input("Escolha uma das opções acima..:")
+"""
+print("1 - Próximo inimigo")
+   print("2 - Comprar munição e vida")
+   print("2 - Descançar")
+   print("3 - Comprar nova arma")
+   
+"""
 
 
 

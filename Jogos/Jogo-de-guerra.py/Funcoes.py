@@ -1,4 +1,5 @@
 import os
+from random import random, randrange
 import time
 
 
@@ -66,16 +67,20 @@ Fort=Fortinho()
 
 def tabela():
    print("O que quer fazer agora?")
-   print()
-   print("1 - Próximo inimigo")
-   print("2 - Comprar munição")
-   print("2 - Descançar")
+   print("""
+1 - Próximo inimigo
+2 - Comprar munição e vida
+3 - Descançar
+4 - Comprar nova arma
+            """)
    
+def Jogo_principal():
+    rand=random.randrange(1,100)
+    print(rand)
 
    
-"""
-Norm.info()
-Rapi.info()
-Fort.info()
-Joga.info()
-"""
+
+#Norm.info()
+#Rapi.info()
+#Fort.info()
+#Joga.info()
