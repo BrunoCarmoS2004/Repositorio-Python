@@ -5,7 +5,7 @@ jogarNovamente="s"
 jogadas=0
 quemJoga=2
 maxJogada=9
-vit="n"
+vit=0
 velha=[
     [" "," "," "],
     [" "," "," "],
@@ -60,12 +60,12 @@ def cpuJoga():
         quemJoga=2
         jogadas+=1
 
-def verificarVitoria():
+def verificarvit():
     global velha
-    vitoria="n"
+    vit=0
     simbolos=["X","O"]
     for s in simbolos:
-        vitoria="n"
+        vit=0
         #verificar linhas
         il=ic=0
         while il<3:
@@ -76,10 +76,10 @@ def verificarVitoria():
                     soma+=1
                 ic+=1       
             if(soma==3):
-                vitoria=s
+                vit=1
                 break
             il+=1  
-        if(vitoria!="n"):
+        if(vit!=0):
             break
         #Verificar Coluna
         il=ic=0
@@ -91,10 +91,10 @@ def verificarVitoria():
                     soma+=1
                 il+=1 
             if(soma==3):
-                vitoria=s
+                vit=1
                 break
             ic+=1
-        if(vitoria!="n"):
+        if(vit!=0):
             break
         #diagonais 1
         soma=0
@@ -104,7 +104,7 @@ def verificarVitoria():
                     soma+=1
             idiag+=1
         if(soma==3):
-            vitoria=s
+            vit=1
             break
         #diagonais 2
         soma=0
@@ -116,9 +116,9 @@ def verificarVitoria():
             idiagl+=1
             idiagc-=1
         if(soma==3):
-            vitoria=s
+            vit=1
             break
-    return vitoria
+    return vit
 
 def redefinir():
     global jogadas
@@ -129,7 +129,7 @@ def redefinir():
     jogadas=0
     quemJoga=2
     maxJogada=9
-    vit="n"
+    vit=0
     velha=[
         [" "," "," "],
         [" "," "," "],
@@ -141,8 +141,8 @@ while True:
     jogadorjoga()
     cpuJoga()
     tela()
-    vit=verificarVitoria
-    #if (vit!="n" or jogadas >=maxJogada:
+    vit=verificarvit
+    #if(vit < 0 or jogadas >=maxJogada):
         #break
     
     
