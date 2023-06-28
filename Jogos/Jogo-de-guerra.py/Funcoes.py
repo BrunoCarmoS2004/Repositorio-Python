@@ -73,35 +73,65 @@ class Jogador(NPC):
 Norm=Normalzinho()
 Rapi=Rapidinho()
 Fort=Fortinho()
-loji=Lojinha()
+Loji=Lojinha()
+
 
 def tabela():
    print("O que quer fazer agora?")
    print("""
-1 - Próximo inimigo
+1 - Ir a luta!
 2 - Comprar munição e vida
 3 - Descançar
 4 - Comprar nova arma
+5 - Desistir...
             """)
    
 def Jogo_principal():
     rand=random.randrange(1,100)
-    if (rand >=1 and rand <= 33):
-        print("Normalzinho")
+    if (rand >=1 and rand <= 40):
+        global inimigo_nome
+        global inimigo_vida
+        inimigo_nome = "Soldado"
+        inimigo_vida = 100
         
-    elif (rand > 33 and rand <= 66):
+        
+        print("Você encontrou um soldado inimigo!")
+        print("O que vai fazer agora?")
+        
+    elif (rand > 33 and rand <= 30):
+        inimigo_vida = 80
+        inimigo_nome = "Soldado rápido"
         print("Rapidinho")
         
-    elif (rand > 66 and rand <= 90):
+    elif (rand > 66 and rand <= 20):
+        inimigo_vida = 200
+        inimigo_nome = "Soldado de elite"
         print("Fortinho")
         
-    elif (rand > 90 and rand <=100):
+    elif (rand > 90 and rand <=10):
+        inimigo_vida = 100
+        inimigo_nome = "Mercador"
         print("Lojinha")
     
-
-   
-
+def Tabela_batalha():
+    while (inimigo_vida > 0 or esc_bat_tab != 2):
+        print("--------------------------------------------------------------")
+        print("|1 - ATACAR | 2 - RECUAR | 3 - DEFENDER | 4 - RECUPERAR VIDA |")   
+        print("--------------------------------------------------------------")
+        esc_bat_tab = input("Sua escolha: ")
+        if (esc_bat_tab == 1):
+            rand=random.randrange(1,100)
+            if (rand <= 60):
+                print("Você acertou ele!")
+                print("O "+inimigo_nome+ "esta com "+inimigo_vida+" de vida!")
+        elif (esc_bat_tab == 3):
+            if (Jogador.energia >= 100):
+                print("Batata")
+            
+        
+    
 #Norm.info()
 #Rapi.info()
 #Fort.info()
 #Joga.info()
+#Loji.info()

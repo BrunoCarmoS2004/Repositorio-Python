@@ -15,64 +15,31 @@ print()
 while resultado == 1:
    os.system('cls')
    print("ATENÇÃO!! Agora você ira escolher o a vida do seu personagem e depois a energia")
-   print("Sua vida e energia precisam estar em equilibrio")
-   print()
-   print("Exemplo:")
-   print()
-   print("1  =< Vida <= 50   --> energia <> 50 --> MAX = 150")
-   print("50 =< Vida <= 75   --> energia <> 50 --> MAX = 120")
-   print("75 =< Vida <= 100  --> energia <> 50 --> MAX =  80")
-   print("100 =< Vida <= 150  --> energia <> 50 --> MAX = 50")
-   print()
-   print()
-
-
+   print("")
+   print("Você tem 200 pontos para gastar em vida e energia, escolha sabiamente...")
+   print("")
+   os.system('pause')
+   print("")
+   os.system('cls')
    esc2=int (input("Escolha a vida do seu personagem..:"))
+   print()
+   sobra = str(200 - esc2)
+   print("Sobrou "+sobra+" pontos para serem usados na energia")
    print()
    esc3=int (input("Escolha a energia do seu personagem..:"))
    print()
    #VIDA 1
-   if (esc2 >= 1) or (esc3 <= 50):
-      if (esc3 >=1 and esc3 <= 150):
-         print("Personagem PERFEITO!!")
-         resultado = 2
-         os.system('pause')
-      else:
-         print("Personagem em desequilibrio, revise a tabela e tente novamente")
-         print()
-         os.system('pause')
-   #VIDA 2
-   elif (esc2 >= 50) or (esc3 <= 75):
-      if (esc3 >=1 and esc3 <= 120):
-         print("Personagem PERFEITO!!")
-         resultado = 2
-         os.system('pause')
-      else:
-         print("Personagem em desequilibrio, revise a tabela e tente novamente")
-         print()
-         os.system('pause')
-         
-   #VIDA 2
-   elif (esc2 >= 75) or (esc3 <= 100):
-      if (esc3 >=1 and esc3 <= 80):
-         print("Personagem PERFEITO!!")
-         resultado = 2
-         os.system('pause')
-      else:
-         print("Personagem em desequilibrio, revise a tabela e tente novamente")
-         print()
-         os.system('pause')
-         
-   #VIDA 2
-   elif (esc2 >= 100) or (esc3 <= 150):
-      if (esc3 >=1 and esc3 <= 50):
-         print("Personagem PERFEITO!!")
-         resultado = 2
-         os.system('pause')
-      else:
-         print("Personagem em desequilibrio, revise a tabela e tente novamente")
-         print()
-         os.system('pause')
+   if (esc2 + esc3 <= 200):
+      print("Personagem PERFEITO!!")
+      print()
+      resultado = 2
+      os.system('pause')
+   else:
+      print("Personagem muito poderoso tente novamente...")
+      print()
+      os.system('pause')
+   
+      
 os.system('cls')   
 print("Olá "+esc1+"! Olhe ao seu redor! esse local será seu desfecho final!")
 print()
@@ -91,6 +58,7 @@ os.system('pause')
 os.system('cls')
 tabela()
 tab_esco = input("Escolha uma das opções acima..:")
+Tabela_batalha()
 
 
 
