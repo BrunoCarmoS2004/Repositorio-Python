@@ -87,10 +87,10 @@ def tabela():
             """)
    
 def Jogo_principal():
+    global inimigo_vida
     rand=random.randrange(1,100)
     if (rand >=1 and rand <= 40):
-        global inimigo_nome
-        global inimigo_vida
+       
         inimigo_nome = "Soldado"
         inimigo_vida = 100
         
@@ -114,6 +114,8 @@ def Jogo_principal():
         print("Lojinha")
     
 def Tabela_batalha():
+    #ARRUMAR ISSOOOOOOOOOOOOOOO
+    inimigo_vida
     while (inimigo_vida > 0 or esc_bat_tab != 2):
         print("--------------------------------------------------------------")
         print("|1 - ATACAR | 2 - RECUAR | 3 - DEFENDER | 4 - RECUPERAR VIDA |")   
